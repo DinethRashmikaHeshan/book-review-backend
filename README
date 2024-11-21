@@ -1,0 +1,2 @@
+First you have to run this backend application and this would expose to 8080 port
+Username and Password of the db need to change application.properties according to your db credentials
