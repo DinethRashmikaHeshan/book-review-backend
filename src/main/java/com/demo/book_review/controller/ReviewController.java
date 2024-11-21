@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -28,6 +29,11 @@ public class ReviewController {
             @RequestParam(required = false) String title,
             @RequestParam(required = false, defaultValue = "true") boolean highRated) {
         return reviewService.getAllReviews(title, highRated);
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Review> getReviewById(@PathVariable Long id) {
+        return reviewService.getReviewById(id);
     }
 
     @GetMapping("/my-reviews")
